@@ -3,7 +3,7 @@ import { Button, Card, List, Skeleton, Space } from 'antd'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
-const posts = () => {
+const Posts = () => {
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -22,7 +22,7 @@ const posts = () => {
         if (!id) {
             router.push("/users")
         }
-    }, [])
+    }, [id])
 
     useEffect(() => {
         fetchPost()
@@ -65,4 +65,4 @@ const posts = () => {
     )
 }
 
-export default posts
+export default Posts
