@@ -54,6 +54,7 @@ const Users = () => {
                     dataSource={users.filter((userInfo) => userInfo.username.toLowerCase().includes(searchTerm.toLowerCase()) || userInfo.name.toLowerCase().includes(searchTerm.toLowerCase()))}
                     renderItem={(userInfo) => (
                         <List.Item
+                            key={userInfo.id}
                             actions={[<Button onClick={() => handleViewPosts(userInfo)}>View Posts</Button>, <Button onClick={() => handleViewDetails(userInfo)}>View Details</Button>]}
                         >
                             <Skeleton avatar title={false} loading={loading}>

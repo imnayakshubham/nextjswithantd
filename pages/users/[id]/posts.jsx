@@ -22,7 +22,7 @@ const Posts = () => {
         if (!id) {
             router.push("/users")
         }
-    }, [id])
+    }, [id, router])
 
     useEffect(() => {
         fetchPost()
@@ -46,6 +46,7 @@ const Posts = () => {
                     dataSource={posts}
                     renderItem={(post) => (
                         <List.Item
+                            key={post.id}
                             actions={[<Button onClick={() => handleEdit(post)}>Edit</Button>, <Button onClick={() => handleDelete(post)}>Delete</Button>]}
                         >
                             <Skeleton avatar title={false} loading={loading}>

@@ -104,6 +104,7 @@ export const Posts = () => {
                     dataSource={posts.allposts.filter((post) => post.title.includes(searchTerm))}
                     renderItem={(post) => (
                         <List.Item
+                            key={post.id}
                             actions={[<Button onClick={() => handleEdit(post)}>Edit</Button>, <Button onClick={() => handleDelete(post)}>Delete</Button>]}
                         >
                             <Skeleton avatar title={false} loading={loading}>
